@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#123f45">
+	<title>تطبيق الإدارة | Maxlond</title>
+	<style>
+		:root{color-scheme:light;--ink:#17313a;--muted:#60757b;--line:#d8e2e3;--paper:#f2f6f5;--white:#fff;--teal:#087f78;--teal-dark:#075e5b;--teal-pale:#e4f2ef;--gold:#c48a31;--red:#a83c42;--shadow:0 7px 24px rgba(21,51,58,.08)}
+		*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.85 Tahoma,Arial,sans-serif}a{color:var(--teal);text-decoration:none}a:hover{text-decoration:underline}code,pre,.ltr{font-family:Consolas,monospace;direction:ltr;unicode-bidi:plaintext}code{overflow-wrap:anywhere;background:#edf3f2;padding:2px 6px;border-radius:4px}pre{overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;background:#102b31;color:#e4f2ef;padding:17px;border-radius:7px;font-size:13px;line-height:1.75;direction:ltr;text-align:left}button{font:inherit;cursor:pointer}.hero{background:linear-gradient(120deg,#143f44,#1c605b 62%,#ad803e);color:#fff;padding:34px 22px 30px}.hero-inner,.shell{width:min(1200px,calc(100% - 34px));margin:auto}.brand{font-size:12px;letter-spacing:.08em;color:#d5e8df}.hero h1{font-size:30px;margin:8px 0 0}.hero p{margin:6px 0 0;color:#e0ebe7}.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.badge{border:1px solid #ffffff59;border-radius:4px;padding:3px 9px;font-size:12px}.shell{display:grid;grid-template-columns:225px minmax(0,1fr);gap:22px;padding:23px 0 55px}.side{position:sticky;top:16px;align-self:start;background:var(--white);border:1px solid var(--line);border-radius:7px;padding:13px;box-shadow:var(--shadow)}.side strong{display:block;padding:5px 8px 9px}.side a{display:block;color:#435c62;font-size:13px;padding:6px 8px;border-radius:4px}.side a:hover{background:var(--teal-pale);text-decoration:none}.main{min-width:0}.section{background:var(--white);border:1px solid var(--line);border-radius:7px;padding:22px;margin-bottom:16px;box-shadow:var(--shadow);scroll-margin-top:16px}.section h2{font-size:20px;margin:0 0 9px}.section h3{font-size:16px;margin:19px 0 7px}.section p{margin:8px 0}.callout{margin:12px 0;padding:11px 13px;border-right:4px solid var(--teal);background:var(--teal-pale);border-radius:4px}.callout.warn{border-color:var(--gold);background:#fbf3e5}.callout.danger{border-color:var(--red);background:#faeded}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{border:1px solid var(--line);border-radius:5px;padding:13px;background:#fbfdfc}.tile b{display:block;color:var(--teal-dark)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:5px}table{width:100%;border-collapse:collapse;min-width:680px}th,td{padding:9px 11px;text-align:right;vertical-align:top;border-bottom:1px solid #e8eeee}th{background:#eff5f3;font-size:13px}tr:last-child td{border-bottom:0}.method{display:inline-block;border:1px solid var(--line);padding:1px 7px;border-radius:4px;font-weight:700}.post{color:var(--teal-dark);background:var(--teal-pale)}.get{color:#70501d;background:#fbf3e5}.copybar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0 6px}.copy{border:1px solid var(--teal);color:var(--teal-dark);background:#fff;border-radius:4px;padding:6px 11px}.copy:hover{background:var(--teal-pale)}.prompt{max-height:520px}.muted{color:var(--muted)}.subnav{display:flex;gap:7px;flex-wrap:wrap}.subnav a{border:1px solid var(--line);border-radius:4px;padding:5px 9px;background:#fff;font-size:13px}.footer{color:var(--muted);text-align:center;padding:10px;font-size:12px}
+		@media(max-width:850px){.shell{grid-template-columns:1fr;gap:12px}.side{position:static}.side-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.hero h1{font-size:25px}.section{padding:17px}}
+		@media(max-width:540px){.hero{padding:25px 17px}.hero-inner,.shell{width:calc(100% - 22px)}.grid{grid-template-columns:1fr}.section{padding:14px}.copybar{align-items:flex-start;flex-direction:column}pre{font-size:12px}}
+		@media print{body{background:#fff}.side,.copy{display:none}.shell{display:block;width:100%;padding:0}.section{box-shadow:none;break-inside:avoid}.hero{background:#fff;color:#111;border-bottom:2px solid #333}.hero p,.brand{color:#333}pre{white-space:pre-wrap}}
+	</style>
+</head>
+<body>
+<header class="hero"><div class="hero-inner"><div class="brand">MAXLOND · تطبيق المدير</div><h1>دليل تطبيق الإدارة</h1><p>مواصفات الشاشات، صلاحيات المدير، واجهات API، أمثلة Flutter وبرومبت تنفيذ جاهز.</p><div class="hero-meta"><span class="badge">REST API</span><span class="badge">role: admin</span><span class="badge">آخر تحديث: 2026-10-04</span></div></div></header>
+<div class="shell">
+	<nav class="side" aria-label="فهرس تطبيق الإدارة"><strong>داخل هذا الملف</strong><div class="side-links">
+		<a href="#overview">نطاق التطبيق</a><a href="#setup">الإعداد والدخول</a><a href="#endpoints">قائمة API</a><a href="#dashboard">لوحة المدير</a><a href="#operations">العمليات</a><a href="#accounting">المحاسبة</a><a href="#warehouse">المخزن والصيانة</a><a href="#dart">كود Flutter مشترك</a><a href="#security">الصلاحيات والأخطاء</a><a href="#prompt">برومبت المطور</a>
+	</div></nav>
+	<main class="main">
+		<section class="section" id="overview"><h2>نطاق تطبيق الإدارة</h2>
+			<p>تطبيق المدير مخصص لمستخدم يحمل الدور <code>admin</code>، ويجمع متابعة المشاريع والمهندسين والموارد والمالية. هذا الملف مستقل عن أدلة المهندس والمحاسب، ويمكن استخدامه أساسًا لتطبيق منفصل أو flavor إداري.</p>
+			<div class="grid">
+				<div class="tile"><b>المشاريع والعمل</b>لوحة المدير، المواقع، خطط العمل، تحديثات المهام، التقارير اليومية ومراجعتها.</div>
+				<div class="tile"><b>الموارد</b>المهندسون والمستخدمون، الآليات، المخزون، حركات المخزن، طلبات التصليح وقطع الغيار.</div>
+				<div class="tile"><b>المالية</b>دليل الحسابات، القيود اليومية، تفاصيل القيود، ميزان المراجعة وملخص النتائج المالية.</div>
+				<div class="tile"><b>المتابعة</b>الإشعارات، الترتيب اليومي للمهندسين، تصدير التقارير من واجهة الويب الحالية.</div>
+			</div>
+			<div class="callout warn"><b>حدود الأدوار:</b> كل المسارات في <code>management.php</code> تتطلب <code>admin</code>. واجهة الحسابات المنفصلة لها دور <code>accountant</code> وملف API مستقل. المخزن والصيانة يستخدمان صلاحية المدير حاليًا.</div>
+		</section>
+
+		<section class="section" id="setup"><h2>الإعداد والدخول</h2>
+			<p>استبدل <code>YOUR_DOMAIN</code> بنطاق HTTPS المنشور عليه نظام Maxlond، وأضف مسار المجلد إذا لم يكن التطبيق في جذر النطاق.</p>
+			<pre>Auth:       https://YOUR_DOMAIN/api/auth.php?route=
+Management: https://YOUR_DOMAIN/api/management.php?route=</pre>
+			<p>الدخول: <code>POST /api/auth.php?route=login</code>. أرسل <code>Accept: application/json</code> و<code>Content-Type: application/json</code> وجسمًا بهذا الشكل:</p>
+			<pre>{
+	"username": "admin.username",
+	"password": "PASSWORD",
+	"device_info": "Maxlond Management / iOS"
+}</pre>
+			<p>اقبل الاستجابة فقط إذا كان <code>data.user.role == "admin"</code>. خزّن <code>data.token</code> في <code>flutter_secure_storage</code>، وأرفقه بكل طلب محمي:</p>
+			<pre>Authorization: Bearer &lt;token&gt;
+Accept: application/json
+Content-Type: application/json</pre>
+			<p>التوكن صالح 30 يومًا ولا توجد نقطة refresh. نفّذ الخروج عبر <code>POST /api/auth.php?route=logout</code> ثم احذف التوكن محليًا. لا تضع كلمة مرور افتراضية أو توكن ثابت في التطبيق.</p>
+		</section>
+
+		<section class="section" id="endpoints"><h2>قائمة واجهات المدير</h2>
+			<p>شكل النجاح: <code>{"success":true,"data":...}</code>. شكل الخطأ: <code>{"success":false,"error":{"code":"...","message":"..."}}</code>.</p>
+			<div class="table-wrap"><table><thead><tr><th>المجموعة</th><th>المسار</th><th>الطريقة</th><th>الغرض</th></tr></thead><tbody>
+				<tr><td>عام</td><td><code>dashboard</code></td><td>GET</td><td>أعداد المواقع والمهندسين والآليات والتقارير والمخزون وترتيب اليوم.</td></tr>
+				<tr><td>المواقع</td><td><code>sites</code></td><td>GET</td><td>قائمة المواقع.</td></tr><tr><td>المواقع</td><td><code>site-save</code></td><td>POST</td><td>إنشاء موقع أو تعديل بياناته.</td></tr><tr><td>المواقع</td><td><code>site-cancel</code></td><td>POST</td><td>أرشفة الموقع بحالة cancelled بدل حذف سجله.</td></tr>
+				<tr><td>خطط العمل</td><td><code>tasks</code></td><td>GET</td><td>المهام؛ مرشحات اختيارية <code>site_id</code> و<code>status</code>.</td></tr><tr><td>خطط العمل</td><td><code>work-plan-save</code></td><td>POST</td><td>إنشاء أو تعديل خطة وإسنادها أو تعميمها.</td></tr><tr><td>خطط العمل</td><td><code>work-plan-cancel</code></td><td>POST</td><td>إلغاء الخطة دون محو سجلها.</td></tr>
+				<tr><td>المستخدمون</td><td><code>users</code></td><td>GET</td><td>قائمة الحسابات وحالاتها.</td></tr><tr><td>المستخدمون</td><td><code>user-save</code></td><td>POST</td><td>إنشاء مهندس/محاسب أو تعديل بياناته.</td></tr><tr><td>المستخدمون</td><td><code>user-status</code></td><td>POST</td><td>تفعيل/تعطيل حساب غير المدير، وإبطال توكناته عند التعطيل.</td></tr>
+				<tr><td>التقارير</td><td><code>reports</code></td><td>GET</td><td>قائمة التقارير مع مرشحي الحالة والموقع؛ إضافة <code>id</code> تعيد التفاصيل والمصروفات والإيصالات.</td></tr><tr><td>التقارير</td><td><code>report-review</code></td><td>POST</td><td>اعتماد تقرير مرسل أو رفضه مع الملاحظات.</td></tr>
+				<tr><td>الآليات</td><td><code>machinery</code>, <code>machinery-save</code>, <code>machinery-status</code></td><td>GET/POST</td><td>قائمة الآليات وتعديلها وتغيير حالتها.</td></tr>
+				<tr><td>المخزن</td><td><code>warehouse-items</code>, <code>warehouse-categories</code>, <code>warehouse-moves</code></td><td>GET</td><td>المواد والفئات والحركات السابقة.</td></tr><tr><td>المخزن</td><td><code>warehouse-item-save</code>, <code>warehouse-category-save</code>, <code>warehouse-item-status</code>, <code>warehouse-move-create</code></td><td>POST</td><td>إدارة المواد والفئات وتسجيل حركة مخزن.</td></tr>
+				<tr><td>الصيانة</td><td><code>repairs</code></td><td>GET</td><td>قائمة التصليحات، وإضافة <code>id</code> لقراءة طلب وقطع غياره.</td></tr><tr><td>الصيانة</td><td><code>repair-create</code>, <code>repair-update</code>, <code>repair-status</code></td><td>POST</td><td>إنشاء/تعديل طلب مفتوح أو تحديث حالته.</td></tr>
+				<tr><td>المحاسبة</td><td><code>accounts</code>, <code>journal</code>, <code>journal-entry</code>, <code>financial</code></td><td>GET</td><td>دليل الحسابات والقيود وتفاصيلها وملخص التقارير المالية.</td></tr><tr><td>المحاسبة</td><td><code>account-save</code>, <code>account-delete</code>, <code>journal-create</code></td><td>POST</td><td>إدارة الحسابات وإنشاء قيود متوازنة.</td></tr>
+				<tr><td>الإشعارات</td><td><code>notifications</code></td><td>GET</td><td>إشعارات المدير.</td></tr><tr><td>الإشعارات</td><td><code>notification-read</code>, <code>notification-read-all</code></td><td>POST</td><td>تعليم إشعار واحد أو جميع الإشعارات كمقروءة.</td></tr>
+			</tbody></table></div>
+		</section>
+
+		<section class="section" id="dashboard"><h2>لوحة المدير</h2>
+			<p>الاستدعاء: <code>GET /api/management.php?route=dashboard</code>. يعيد:</p>
+			<pre>{
+	"sites": 12,
+	"engineers": 8,
+	"machinery": 14,
+	"pending_reports": 3,
+	"inventory_value": 1250000,
+	"today_top_engineers": [
+		{"engineer_id": 7, "full_name": "اسم المهندس", "score": 78,
+		 "activity_count": 3, "completed_tasks": 1}
+	]
+}</pre>
+			<p>ترتيب اليوم يحسب متوسط نسب الإنجاز المسجلة في تقارير اليوم وتحديثات المهام، ويرتب أعلى سبعة مهندسين. عند عدم وجود نشاط تكون القائمة فارغة.</p>
+		</section>
+
+		<section class="section" id="operations"><h2>المواقع والخطط والمستخدمون</h2>
+			<h3>إنشاء أو تعديل موقع</h3>
+			<pre>POST /api/management.php?route=site-save
+{
+	"id": 0,
+	"name": "موقع المشروع",
+	"client_name": "اسم العميل",
+	"work_date": "2026-10-04",
+	"start_time": "08:00",
+	"end_time": "17:00",
+	"location": "بغداد",
+	"budget": 25000000,
+	"status": "active",
+	"manager_id": 3,
+	"description": "وصف المشروع"
+}</pre>
+			<p>أرسل <code>id</code> الموجود للتعديل، واتركه فارغًا/صفرًا للإنشاء. الحالات: planning, active, paused, completed, cancelled. لإلغاء موقع أرسل <code>POST site-cancel</code> بجسم <code>{"site_id":12}</code>.</p>
+			<h3>خطط العمل</h3>
+			<pre>POST /api/management.php?route=work-plan-save
+{
+	"id": 0,
+	"site_id": 12,
+	"title": "تنفيذ الأساس",
+	"description": "تفاصيل المهمة",
+	"assigned_to": 7,
+	"is_broadcast": false,
+	"priority": "high"
+}</pre>
+			<p>الأولوية: low, medium, high, urgent. للتعميم اجعل <code>is_broadcast=true</code>. إلغاء خطة: <code>POST work-plan-cancel</code> مع <code>{"task_id":34}</code>.</p>
+			<h3>إنشاء حساب موظف</h3>
+			<pre>POST /api/management.php?route=user-save
+{
+	"full_name": "اسم المحاسب",
+	"username": "finance.user",
+	"email": "finance@example.com",
+	"role": "accountant",
+	"password": "TEMPORARY_PASSWORD_10+",
+	"phone": "",
+	"specialization": "محاسبة"
+}</pre>
+			<p>الأدوار المسموحة عبر هذا المسار: engineer وaccountant فقط. كلمة المرور لا تقل عن 10 أحرف. الإنشاء يكون نشطًا ومعتمدًا؛ اطلب من المستخدم تغيير كلمة المرور وفق سياسة الشركة عند أول دخول إن كانت شاشة تغيير كلمة المرور مضافة في التطبيق.</p>
+		</section>
+
+		<section class="section" id="reports"><h2>التقارير ومراجعتها</h2>
+			<p>القائمة: <code>GET reports?status=submitted&amp;site_id=12</code>. التفاصيل: <code>GET reports&amp;id=28</code> وتشمل <code>expenses</code> و<code>receipts</code>.</p>
+			<h3>اعتماد أو رفض تقرير</h3>
+			<pre>POST /api/management.php?route=report-review
+{
+	"report_id": 28,
+	"decision": "approved",
+	"admin_notes": "تمت مراجعة التقرير والإيصالات"
+}</pre>
+			<p><code>decision</code> تساوي approved أو rejected. التقرير الذي تمت مراجعته لا يقبل قرارًا ثانيًا ويرجع 409. الاعتماد ينشئ قيد مصروفات التقرير عند وجود الحسابات المناسبة. راجع المرفقات والتفاصيل قبل الاعتماد.</p>
+		</section>
+
+		<section class="section" id="accounting"><h2>الحسابات والقيود</h2>
+			<p>قراءة الحسابات: <code>GET accounts</code>. إنشاء/تعديل: <code>POST account-save</code> مع code/name/type، وحقول parent_id/description/is_active الاختيارية.</p>
+			<pre>POST /api/management.php?route=journal-create
+{
+	"description": "قيد مصروف نقل",
+	"site_id": 12,
+	"lines": [
+		{"account_id": 15, "debit": 125000, "credit": 0, "description": "مصروف نقل"},
+		{"account_id": 2, "debit": 0, "credit": 125000, "description": "صرف نقدي"}
+	]
+}</pre>
+			<p>مجموع المدين يجب أن يساوي الدائن. الحسابات ذات رصيد أو المستخدمة في قيود لا يمكن حذفها. القيود المرحلة موقعة؛ لا توفر API تعديلًا أو حذفًا لها، ويكون التصحيح بقيد عكسي.</p>
+			<p>التقارير: <code>GET financial</code> يعيد balances وnet_profit وtrial_balance. القيود: <code>GET journal</code> مع from/to اختيارية، والتفاصيل عبر <code>GET journal-entry&amp;id=ID</code>.</p>
+		</section>
+
+		<section class="section" id="warehouse"><h2>المخزن والصيانة</h2>
+			<h3>حركة المخزن</h3>
+			<pre>POST /api/management.php?route=warehouse-move-create
+{
+	"item_id": 5,
+	"type": "out",
+	"quantity": 2,
+	"unit_price": 45000,
+	"site_id": 12,
+	"supplier": "",
+	"invoice_number": "INV-100",
+	"reason": "صرف للموقع"
+}</pre>
+			<p>الحالات in/out/adjust. الصرف فوق الرصيد مرفوض. الوارد والصادر ينشئان قيدًا محاسبيًا تلقائيًا عند توفر الحسابات؛ التسوية تحفظ حركة موثقة ولا تنشئ قيدًا تلقائيًا.</p>
+			<h3>إنشاء طلب تصليح</h3>
+			<pre>POST /api/management.php?route=repair-create
+{
+	"machinery_id": 4,
+	"title": "خلل في المضخة",
+	"description": "الوصف",
+	"problem_type": "mechanical",
+	"priority": "high",
+	"technician_name": "الفني",
+	"workshop": "الورشة",
+	"labor_cost": 100000,
+	"notes": "ملاحظات",
+	"parts": [{"part_name":"فلتر","quantity":1,"unit_price":25000}]
+}</pre>
+			<p>قراءة الطلبات: <code>GET repairs</code>؛ التفاصيل وقطع الغيار: <code>GET repairs&amp;id=ID</code>. تحديث الحالة عبر <code>POST repair-status</code> مع repair_id وstatus. إكمال طلب مكلف ينشئ قيد صيانة تلقائيًا؛ الطلب المكتمل أو المرتبط بقيد مقفل للتعديل.</p>
+		</section>
+
+		<section class="section" id="dart"><h2>كود Flutter للاتصال</h2>
+			<h3>الحزم المقترحة</h3>
+			<pre>dependencies:
+	http: ^1.2.0
+	flutter_secure_storage: ^9.2.0</pre>
+			<h3>عميل API</h3>
+			<pre>import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
+
+class ApiException implements Exception {
+	const ApiException(this.statusCode, this.code, this.message);
+	final int statusCode;
+	final String code;
+	final String message;
+}
+
+class AdminApi {
+	AdminApi(String origin, {http.Client? client})
+			: _origin = origin,
+				_client = client ?? http.Client();
+
+	final String _origin;
+	final http.Client _client;
+	final _storage = const FlutterSecureStorage();
+
+	Uri _uri(String route, [Map&lt;String, String&gt; query = const {}]) =&gt;
+			Uri.parse('$_origin/api/management.php').replace(queryParameters: {
+				'route': route,
+				...query,
+			});
+
+	Future&lt;Map&lt;String, dynamic&gt;&gt; login(String username, String password) async {
+		final response = await _client.post(
+			Uri.parse('$_origin/api/auth.php?route=login'),
+			headers: const {'Accept': 'application/json', 'Content-Type': 'application/json'},
+			body: jsonEncode({'username': username, 'password': password,
+				'device_info': 'Maxlond Management / Flutter'}),
+		);
+		final data = _decode(response);
+		if (data['user']?['role'] != 'admin') {
+			throw const ApiException(403, 'role_not_allowed', 'هذا التطبيق مخصص للمدير');
+		}
+		await _storage.write(key: 'access_token', value: data['token'] as String);
+		return Map&lt;String, dynamic&gt;.from(data['user'] as Map);
+	}
+
+	Future&lt;Map&lt;String, String&gt;&gt; _headers() async =&gt; {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json',
+		'Authorization': 'Bearer ${await _storage.read(key: 'access_token') ?? ''}',
+	};
+
+	Map&lt;String, dynamic&gt; _decode(http.Response response) {
+		final decoded = jsonDecode(utf8.decode(response.bodyBytes));
+		if (decoded is! Map&lt;String, dynamic&gt;) {
+			throw const ApiException(500, 'invalid_response', 'استجابة الخادم غير صالحة');
+		}
+		if (response.statusCode &lt; 200 || response.statusCode &gt;= 300 || decoded['success'] != true) {
+			final error = decoded['error'];
+			throw ApiException(response.statusCode,
+				error is Map ? '${error['code'] ?? 'request_failed'}' : 'request_failed',
+				error is Map ? '${error['message'] ?? 'تعذر تنفيذ الطلب'}' : 'تعذر تنفيذ الطلب');
+		}
+		return Map&lt;String, dynamic&gt;.from(decoded['data'] as Map);
+	}
+
+	Future&lt;dynamic&gt; get(String route, [Map&lt;String, String&gt; query = const {}]) async {
+		final response = await _client.get(_uri(route, query), headers: await _headers());
+		return _decode(response);
+	}
+
+	Future&lt;dynamic&gt; post(String route, Map&lt;String, dynamic&gt; body) async {
+		final response = await _client.post(_uri(route), headers: await _headers(), body: jsonEncode(body));
+		return _decode(response);
+	}
+
+	Future&lt;void&gt; logout() async {
+		try { await post('logout', const {}); } finally {
+			await _storage.delete(key: 'access_token');
+		}
+	}
+}</pre>
+			<p>استخدم استدعاء <code>get('reports', {'id':'28'})</code> أو <code>post('site-save', payload)</code>. عالج SocketException والمهلة برسالة قابلة لإعادة المحاولة، ولا تعِد POST ماليًا تلقائيًا إذا كانت نتيجة الطلب غير معروفة.</p>
+		</section>
+
+		<section class="section" id="security"><h2>الصلاحيات والأخطاء</h2>
+			<div class="grid"><div class="tile"><b>أكواد HTTP</b>200 نجاح، 201 إنشاء، 400 JSON/مسار غير صالح، 401 توكن أو بيانات دخول، 403 صلاحية، 404 غير موجود، 405 طريقة غير مسموحة، 409 تعارض/سجل مقفل، 422 تحقق، 429 محاولات كثيرة، 500 خطأ خادم.</div><div class="tile"><b>سجلات مالية</b>لا تحذف قيودًا مرحلة أو حركات مخزن؛ استخدم قيدًا عكسيًا أو تسوية. لا تسمح بحذف حساب مستخدم أو ذي رصيد.</div></div>
+			<p>أوقف جلسة التطبيق وامسح التوكن عند 401. عند 403 لا تكرر الطلب؛ أخفِ الإجراء غير المسموح. لا تعرض رسائل SQL أو stack trace، ولا تسجل كلمات المرور أو التوكن.</p>
+			<p>لإنشاء دور المحاسب على قاعدة موجودة، شغّل مرة واحدة <code>migrations/20261003_add_accountant_role.sql</code>. لا تستورد <code>database.sql</code> فوق قاعدة مستخدمة؛ يحتوي على أوامر حذف الجداول.</p>
+			<div class="callout danger"><b>قبل النشر:</b> استخدم HTTPS، واضبط APP_URL وبيانات قاعدة الإنتاج يدويًا. لا ترفع إعداد database.php المحلي كما هو ولا تنقل مفتاح التوقيع بين قواعد البيانات.</div>
+		</section>
+
+		<section class="section" id="prompt"><h2>برومبت مباشر لمطور تطبيق الإدارة</h2>
+			<p>انسخ البرومبت، ثم استبدل نطاق الخدمة الفعلي. جميع المسارات والصلاحيات أدناه مطابقة للـAPI الحالي.</p>
+			<div class="copybar"><b>Maxlond Management · Flutter</b><button class="copy" type="button" data-copy="admin-prompt">نسخ البرومبت</button></div>
+			<pre class="prompt" id="admin-prompt">أنت مطور Flutter خبير. أنشئ تطبيق إدارة عربي RTL لشركة Maxlond لإدارة المشاريع المدنية والمقاولات. ابنِ تطبيقًا قابلاً للتشغيل باستخدام Material 3، طبقات واضحة (models, services, screens, state)، ودعم هواتف وأجهزة لوحية. لا تخترع أي endpoint غير الموجود في هذه المواصفات.
+
+الهوية: Maxlond Management. هذا التطبيق للمدير فقط role=admin. لا تخلط صلاحيات المهندس أو المحاسب. المخزن والصيانة يستخدمان admin حاليًا، أما المحاسب فله تطبيق ودور مستقل.
+
+الاتصال:
+- API المصادقة: https://YOUR_DOMAIN/api/auth.php?route=
+- API المدير: https://YOUR_DOMAIN/api/management.php?route=
+- استخدم http وflutter_secure_storage. خزّن Bearer token بشكل آمن، لا تسجله ولا تضع بيانات اعتماد ثابتة.
+- أرسل Accept: application/json، وContent-Type: application/json لطلبات JSON.
+- POST login إلى auth.php، وبعد النجاح تحقق من data.user.role == admin. إذا لم يكن admin أوقف الدخول إلى التطبيق.
+- نفّذ me عند استعادة الجلسة، وlogout عند الخروج ثم امسح التوكن. لا توجد نقطة تجديد؛ التوكن صالح 30 يومًا.
+- اعمل ApiException موحدًا للأخطاء؛ 401 خروج إلى الدخول، 403 منع، 404 غير موجود، 409 تعارض، 422 تحقق بيانات، 429 إيقاف المحاولات مؤقتًا، 500 رسالة عامة. عالج انقطاع الشبكة والمهلات دون افتراض أن كل استجابة JSON.
+
+التصميم وتجربة الاستخدام:
+- واجهة عربية RTL بالكامل، أرقام/مبالغ منسقة، جداول قابلة للبحث والفلترة، تفاصيل واضحة، وحالات loading/empty/error/offline.
+- التنقل: الرئيسية، المشاريع، المهام، التقارير، الموارد، المالية، المستخدمون، الإشعارات.
+- لا تسمح بتكرار عمليات POST الحساسة بعد timeout غير محسوم. اطلب تأكيدًا قبل الإلغاء أو تغيير المخزون.
+- القيود المرحلة والسجلات المالية غير قابلة للحذف؛ صححها بقيد عكسي. اعرض رسائل عربية مختصرة.
+
+شاشات ومسارات API:
+1) لوحة المدير: GET dashboard. اعرض sites, engineers, machinery, pending_reports, inventory_value وtoday_top_engineers. عناصر ترتيب الإنجاز: engineer_id, full_name, score, activity_count, completed_tasks.
+2) المواقع: GET sites. إنشاء/تعديل POST site-save بالحقول name, client_name, work_date, start_time, end_time, location, budget, status, manager_id, description؛ أرسل id عند التعديل. حالات الموقع planning/active/paused/completed/cancelled. الإلغاء عبر POST site-cancel {"site_id":ID} ويحفظ السجل كـcancelled.
+3) خطط العمل: GET tasks مع site_id/status اختياريين. إنشاء/تعديل POST work-plan-save بالحقول site_id,title,description,assigned_to,is_broadcast,priority؛ إلغاء POST work-plan-cancel {"task_id":ID}. الأولوية low/medium/high/urgent. لا تحذف سجل المهمة.
+4) تحديثات المهام: تعرضها من GET tasks؛ تحديث المهندس يتم عبر واجهة engineer ولا ترسل تحديثًا نيابة عنه.
+5) التقارير: GET reports مع status/site_id؛ التفاصيل GET reports&id=ID تشمل expenses وreceipts. اعرض الطقس والإنجاز والعمل والمشاكل والسلامة والمصروفات والمرفقات. اعتماد/رفض POST report-review بجسم {"report_id":ID,"decision":"approved|rejected","admin_notes":"..."}. الاعتماد يرحّل مصروف التقرير إلى قيد تلقائي عند توفر الحسابات. لا تراجع تقريرًا غير submitted ولا تكرر القرار.
+6) المستخدمون: GET users؛ POST user-save لإنشاء أو تعديل بيانات engineer/accountant. الإنشاء يتطلب full_name,username,email,role,password (10 أحرف على الأقل)، ويمكن phone وspecialization. POST user-status {"user_id":ID,"is_active":0|1}. لا تعرض كلمة المرور مرة أخرى ولا تسمح بتعطيل المدير الحالي.
+7) الآليات: GET machinery؛ POST machinery-save لإنشاء/تعديل code,name,plate_number,operator_name,status,hourly_cost,notes؛ POST machinery-status {"machinery_id":ID,"status":"available|in_use|maintenance|out_of_service"}.
+8) المخزن: GET warehouse-items (يدعم low=1/category_id)، warehouse-categories، warehouse-moves (يدعم item_id). اكتب item عبر POST warehouse-item-save، category عبر warehouse-category-save، تعطيل مادة عبر warehouse-item-status. حركة POST warehouse-move-create بالحقول item_id,type,quantity,unit_price,site_id,supplier,invoice_number,reason، والنوع in/out/adjust. امنع صرف ما فوق الرصيد؛ الوارد والصادر قد ينشئان قيدًا ماليًا تلقائيًا.
+9) الصيانة: GET repairs أو repairs&id=ID (مع parts). POST repair-create/repair-update بالحقول machinery_id,title,description,problem_type,priority,technician_name,workshop,labor_cost,notes,parts؛ كل part فيه part_name,quantity,unit_price. تحديث POST repair-status مع repair_id/status. الحالات pending/in_progress/waiting_parts/completed/cancelled. الطلب المكتمل أو المرتبط بقيد مقفل. إكمال تصليح مكلف يرحّل قيد صيانة.
+10) الحسابات: GET accounts وfinancial وjournal وjournal-entry&id=ID. POST account-save وaccount-delete وjournal-create. القيد يجب أن يتوازن (مجموع debit = مجموع credit). امنع حذف الحساب المستخدم أو ذي رصيد؛ لا تعدل قيدًا مرحلًا، استخدم قيدًا عكسيًا.
+11) الإشعارات: GET notifications؛ POST notification-read {"notification_id":ID} أو POST notification-read-all دون جسم.
+
+الاختبارات المطلوبة:
+- تحليل JSON للنجاح والخطأ و401 و403 و409 و422.
+- اختبار إخفاء شاشة أو فعل غير مسموح للدور، وعدم قبول دور غير admin في تطبيق الإدارة.
+- اختبار توازن القيود، صيغ التواريخ، مرشحات القوائم، وحماية منع الصرف الزائد.
+- اختبر آلية تسجيل الدخول والتوكن دون بيانات حقيقية ثابتة.
+
+أنشئ نماذج Dart للشاشات أعلاه، خدمة API مركزية، إدارة توكن آمنة، ورسائل/نماذج عربية. اعرض خطوات التشغيل وبناء التطبيق، ولا تنفذ تغييرات في قاعدة البيانات أو backend من تطبيق الهاتف.</pre>
+		</section>
+		<footer class="footer">Maxlond · ملف مواصفات تطبيق الإدارة · واجهات API وFlutter</footer>
+	</main>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const target=document.getElementById(button.dataset.copy);if(!target)return;const original=button.textContent;try{await navigator.clipboard.writeText(target.textContent);button.textContent='تم النسخ';}catch(error){const area=document.createElement('textarea');area.value=target.textContent;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();document.execCommand('copy');area.remove();button.textContent='تم النسخ';}setTimeout(()=>button.textContent=original,1800)}));
+</script>
+</body>
+</html>
